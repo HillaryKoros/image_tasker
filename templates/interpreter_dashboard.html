@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpreter Dashboard</title>
+</head>
+<body>
+    <h1>Interpreter Dashboard</h1>
+    {% if analyzed_images %}
+        <ul>
+            {% for image in analyzed_images %}
+                <li>
+                    {{ image }}
+                    <form action="{{ url_for('interpreter_comments') }}" method="post">
+                        <input type="hidden" name="selected_image" value="{{ image }}">
+                        <label for="comment">Add Comment:</label>
+                        <input type="text" name="comment" required>
+                        <button type="submit">Submit Comment</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No analyzed images available.</p>
+    {% endif %}
+</body>
+</html>

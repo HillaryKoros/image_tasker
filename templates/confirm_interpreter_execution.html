@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Interpreter Execution</title>
+</head>
+<body>
+    <h1>Confirm Interpreter Execution</h1>
+    <p>You are about to execute analysis for the selected TIFF as an Interpreter.</p>
+    <form action="{{ url_for('execute_interpreter_analysis') }}" method="post">
+        <input type="hidden" name="selected_tiff" value="{{ selected_tiff }}">
+        <input type="hidden" name="analysis_type" value="{{ analysis_type }}">
+        <button type="submit">Proceed with Analysis</button>
+    </form>
+</body>
+</html>

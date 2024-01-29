@@ -1,0 +1,6 @@
+<form method="post" action="{{ url_for('execute_analysis') }}">
+    <input type="hidden" name="selected_tiff" value="{{ selected_tiff }}">
+    <p>Selected TIFF: {{ selected_tiff }}</p>
+    <button type="submit" name="confirm_analysis" value="Yes">&#x2705; Yes</button>
+    <button type="submit" name="confirm_analysis" value="No">&#x274C; No</button>
+</form>

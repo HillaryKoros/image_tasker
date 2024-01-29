@@ -1,0 +1,22 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Imagery Tasking System</h1>
+    <h2>Users</h2>
+    <form action="{{ url_for('select_user') }}" method="post">
+        <select name="user">
+            {% for user in users %}
+                <option value="{{ loop.index - 1 }}">{{ user['name'] }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Select User</button>
+    </form>
+</body>
+</html>

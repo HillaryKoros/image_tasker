@@ -1,0 +1,22 @@
+<!-- select_tiff.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select TIFF</title>
+</head>
+<body>
+    <h2>Select TIFF for Analysis</h2>
+    <form action="{{ url_for('select_tiff_for_analysis') }}" method="post">
+        <select name="selected_tiff">
+            {% for tiff_file in tiff_files %}
+                <option value="{{ tiff_file }}">{{ tiff_file }}</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="folder_path" value="{{ folder_path }}">
+        <button type="submit">Select TIFF</button>
+    </form>
+</body>
+</html>

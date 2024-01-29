@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Analysis</title>
+</head>
+<body>
+    <h1>Choose Analysis Type</h1>
+    <form method="post" action="{{ url_for('confirm_analysis') }}">
+        <input type="hidden" name="selected_tiff" value="{{ selected_tiff }}">
+        <p>Selected TIFF: {{ selected_tiff }}</p>
+        <label for="analysis_type">Choose Analysis Type:</label>
+        <select name="analysis_type" id="analysis_type">
+            <option value="histogram_equalization">Histogram Equalization</option>
+            <option value="Normalized difference vegetation index">Normalized difference vegetation index</option>
+            <option value="Transformation">Transformation</option>
+            <!-- Add more analysis options as needed -->
+        </select>
+        <button type="submit">Perform Analysis &#x1F50D;</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose TIFF Path for Interpretation</title>
+</head>
+<body>
+    <h1>Choose TIFF Path for Interpretation</h1>
+    <p>You are an Interpreter. Please enter the path to the TIFF file for interpretation:</p>
+    <form action="{{ url_for('confirm_analysis') }}" method="post">
+        <input type="hidden" name="selected_tiff" value="{{ selected_tiff }}">
+        <input type="hidden" name="analysis_type" value="{{ analysis_type }}">
+        <label for="tiff_path">TIFF Path:</label>
+        <input type="text" name="tiff_path" required>
+        <button type="submit">Confirm Analysis</button>
+    </form>
+</body>
+</html>

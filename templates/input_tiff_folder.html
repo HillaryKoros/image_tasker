@@ -1,0 +1,18 @@
+<!-- input_tiff_folder.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input TIFF Folder</title>
+</head>
+<body>
+    <h2>Input TIFF Folder</h2>
+    <form action="{{ url_for('process_tiff_folder') }}" method="post">
+        <label for="folder_path">Folder Path:</label>
+        <input type="text" name="folder_path" required>
+        <button type="submit">Process Folder</button>
+    </form>
+</body>
+</html>
